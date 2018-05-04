@@ -5,6 +5,13 @@ import sys
 import os
 import math
 
+"""
+This script generates (or append text in existing) .xml files containing html code readable in the visualization software Paraview. The use of such xml files within Paraview allows to load user defined colorMaps.
+The generation of those files requires three equations that return the RGB code at a given scale factor x (-1<x<1 or 0<x<1). Those equations are used as callables (symbol evaluators) thanks to the 'lambda' python operator. 
+Three equations systems given in "Paul Tol. 2012. "Colour Schemes." SRON Technical Note, SRON/EPS/TN/09-002. https://personal.sron.nl/~pault/colourschemes.pdf" are included so far in the method 'predefinedColorMap(system)' and one can switch from one to another by changing the argument system from 1 to 3.
+Other color maps can be added in the same way provinding that the equations systems is known !
+"""
+
 
 # Functions used in the script
 #######################################################
