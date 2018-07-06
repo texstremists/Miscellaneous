@@ -1,0 +1,14 @@
+#!/bin/sh
+
+pwd | 
+while read topDir; do
+    for FOLDER in ./*/ ; do # the last slash makes it only valid for directories
+        cd ${FOLDER}
+        echo ========== current folder: $FOLDER
+        echo + pulling ...
+        git pull
+        echo + coming back
+        cd ${topDir}
+    done
+
+done

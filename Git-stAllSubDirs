@@ -1,0 +1,15 @@
+#!/bin/sh
+pwd |
+while read topDir; do
+    for FOLDER in ./*/ ; do # the lastatus slash makes it only valid for directories
+        cd ${FOLDER}
+        echo ========== current folder: $FOLDER
+        echo + status ...
+        git status 2>&1 | grep modified
+        git status 2>&1 | grep deleted
+        git status 2>&1 | grep renamed
+        echo + coming back
+        cd ${topDir}
+    done
+done
+# will only output something if git repo + modified, deleted or renamed file
