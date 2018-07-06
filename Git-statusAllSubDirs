@@ -1,7 +1,7 @@
 #!/bin/sh
 pwd |
 while read topDir; do
-    for FOLDER in ./*/ ; do # the lastatus slash makes it only valid for directories
+    for FOLDER in ./*/ ; do # the last slash makes it only valid for directories
         cd ${FOLDER}
         echo ========== current folder: $FOLDER
         echo + status ...
